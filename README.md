@@ -1,14 +1,12 @@
 
 
-Features:
-Responsive Layout
-Role Based Access Control
 
 
 
 
-###Logo of the project  
-###Name of the project  
+
+### Logo of the project  
+### Name of the project  
 
 
 A brief description of your project, what it is used for.
@@ -65,7 +63,7 @@ Describe and show how to run the tests with code examples. Explain what these te
 
 Give an example
 
-####Style guide
+#### Style guide
 
 Explain your code style and show how to check it.
 #### Api Reference
