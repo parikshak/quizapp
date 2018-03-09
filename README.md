@@ -24,9 +24,9 @@ Here you should say what actually happens when you execute the code above.
 
 Here's a brief intro about what a developer must do in order to start developing the project further:
 
-```git clone https://github.com/parikshak/quizapp.git```
-```cd quizapp```
-```npm install```
+```git clone https://github.com/parikshak/quizapp.git```<br />
+```cd quizapp```<br />
+```npm install```<br />
 ```npm run start```
 
 #### Building
