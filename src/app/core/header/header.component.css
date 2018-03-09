@@ -1,0 +1,19 @@
+.header-container {
+  border: 0px;
+}
+
+.header-container .ui .item{
+  border-left: 0px !important;
+}
+
+.ui.menu .item:before{
+  width: 0px;
+}
+
+.header-username {
+  font-size: 20px;
+}
+
+.header-username i {
+  font-size: 35px;
+}

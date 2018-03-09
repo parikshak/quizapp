@@ -6,8 +6,9 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent 
-}
+  {
+    path: 'login', component: LoginComponent 
+  }
 ];
 
 @NgModule({
@@ -19,6 +20,9 @@ const routes: Routes = [
     HeaderComponent,
     LoginComponent
   ],
-  exports :[RouterModule, HeaderComponent],
+  exports :[
+    RouterModule,
+    HeaderComponent
+   ],
 })
 export class CoreModule { }
