@@ -1,28 +1,22 @@
 ### Poll Form
 
-
+Poll form is helps us to get opinions from user.
 
 #### Installing / Getting started
 
-A quick introduction of the minimal setup you need to get a hello world up & running.
-
-commands here
-
-Here you should say what actually happens when you execute the code above.
 #### Developing
+
 ### Built With
 
 1. Angular 5
 2. Semant-UI
 
-#### Prerequisites
+### Prerequisites
 
 1. NodeJS
 2. NPM
 
-#### Setting up Dev
-
-Here's a brief intro about what a developer must do in order to start developing the project further:
+### Setting up Dev
 
 ```git clone https://github.com/parikshak/quizapp.git```<br />
 ```cd quizapp```<br />
@@ -32,8 +26,6 @@ Here's a brief intro about what a developer must do in order to start developing
 #### Building
 
 `npm run build`
-
-Here again you should state what actually happens when the code above gets executed.  
 
 #### Deploying / Publishing
 
