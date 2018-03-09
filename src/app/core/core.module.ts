@@ -1,16 +1,24 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Routes, RouterModule } from '@angular/router';
+
 import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './login/login.component';
+
+const routes: Routes = [
+  { path: 'login', component: LoginComponent 
+}
+];
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forRoot(routes)
   ],
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent
   ],
-  exports: [
-    HeaderComponent
-  ],
+  exports :[RouterModule, HeaderComponent],
 })
 export class CoreModule { }

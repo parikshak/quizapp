@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { appRoutes } from './routerConfig';
 import { QuizComponent } from './quiz/quiz.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
