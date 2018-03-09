@@ -3,20 +3,16 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { IndexComponent } from './index/index.component';
-import { CreateComponent } from './create/create.component';
-import { EditComponent } from './edit/edit.component';
+import {CoreModule} from './core/core.module';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    IndexComponent,
-    CreateComponent,
-    EditComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
