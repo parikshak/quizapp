@@ -1,22 +1,22 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
-
+import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
-import { IndexComponent } from './index/index.component';
-import { CreateComponent } from './create/create.component';
-import { EditComponent } from './edit/edit.component';
+import { appRoutes } from './routerConfig';
+import { QuizComponent } from './quiz/quiz.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent,
-    CreateComponent,
-    EditComponent
+    QuizComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
