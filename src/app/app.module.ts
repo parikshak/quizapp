@@ -15,7 +15,6 @@ import {QuizModule} from './quiz/quiz.module';
     BrowserModule,
     CoreModule,
     QuizModule
-    // RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
