@@ -4,10 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { QuizComponent } from './quiz.component';
 import { ReviewComponent } from './review/review.component';
 
-import {CoreModule} from '../core/core.module'
+import { CoreModule } from '../core/core.module';
+import { QuestionComponent } from './question/question.component';
 
 const routes: Routes = [
-  { path: 'quiz', component: QuizComponent}
+  { path: 'quiz', component: QuizComponent},
+  { path: '', component: QuizComponent}
 ];
 
 
@@ -18,6 +20,6 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   exports:[RouterModule],
-  declarations: [ReviewComponent, QuizComponent]
+  declarations: [ReviewComponent, QuizComponent, QuestionComponent]
 })
 export class QuizModule { }

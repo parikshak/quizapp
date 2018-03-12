@@ -6,8 +6,6 @@ import { AppComponent } from './app.component';
 import {CoreModule} from './core/core.module';
 import {QuizModule} from './quiz/quiz.module';
 
-// import { appRoutes } from './routerConfig';
-
 
 @NgModule({
   declarations: [

@@ -9,9 +9,79 @@ import {HeaderComponent} from '../core/header/header.component'
 })
 export class QuizComponent implements OnInit {
 
-  constructor() { }
+  questions: any[];
+  selectedPartIndex: number;
+  selectedQuestionIndex: number;
+  constructor() {
+    this.questions = [{
+      "id": "1", 
+      "heading": "Sample part 1 heading", 
+      "question": [{
+        "title": "Sample Question in part 1", 
+        "answers": {
+          "answer": [{
+            "@label": "Option answer 1", 
+            "@value": "J"
+          }, {
+            "@label": "Option answer 2", 
+            "@value": "P"
+          }]
+        }
+      },{
+        "title": "Sample Question2 in part 1", 
+        "answers": {
+          "answer": [{
+            "@label": "Option answer 1", 
+            "@value": "J"
+          }, {
+            "@label": "Option answer 2", 
+            "@value": "P"
+          }]
+        }
+      }]
+    },{
+      "id": "2", 
+      "heading": "Sample part 2 heading", 
+      "question": [{
+        "title": "Sample Question in part 2", 
+        "answers": {
+          "answer": [{
+            "@label": "Option answer 1", 
+            "@value": "J"
+          }, {
+            "@label": "Option answer 2", 
+            "@value": "P"
+          }]
+        }
+      }]
+    }]
+    this.selectedPartIndex = 0;
+    this.selectedQuestionIndex = 0;
+  }
 
   ngOnInit() {
   }
 
+  loadNextQuestion() {
+    var currentPartQuesCount = this.questions[this.selectedPartIndex].question.length - 1
+    if(this.selectedQuestionIndex === currentPartQuesCount ) {
+      if (this.selectedPartIndex === (this.questions.length - 1)) {
+        // load review function
+      } else {
+        this.selectedPartIndex = this.selectedPartIndex + 1;
+        this.selectedQuestionIndex = 0;
+      }
+    } else {
+      this.selectedQuestionIndex = this.selectedQuestionIndex + 1;
+    }
+  }
+
+  loadPrevQuestion() {
+    if(this.selectedQuestionIndex === 0 ) {
+      this.selectedPartIndex = this.selectedPartIndex - 1;
+      this.selectedQuestionIndex = this.questions[this.selectedPartIndex].question.length - 1;
+    } else {
+      this.selectedQuestionIndex = this.selectedQuestionIndex - 1;
+    }
+  }
 }

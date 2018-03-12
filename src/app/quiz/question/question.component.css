@@ -1,0 +1,11 @@
+.question-title{
+  font-size: 30px;
+}
+
+.options-container{
+  margin-top: 50px;
+}
+
+.option-label {
+  font-size: 18px !important;
+}
