@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 import {HeaderComponent} from '../core/header/header.component'
 
@@ -12,7 +13,36 @@ export class QuizComponent implements OnInit {
   questions: any[];
   selectedPartIndex: number;
   selectedQuestionIndex: number;
+  public items = [
+    {name :'vaibhav',selected:true},
+    {name :'vaibhav',selected:true},
+    {name :'vaibhav',selected:true},
+    {name :'vaibhav',selected:false},
+    {name :'vaibhav',selected:true},
+    {name :'vaibhav',selected:true},
+    {name :'vaibhav',selected:false},
+    {name :'vaibhav',selected:true},
+    {name :'vaibhav',selected:true},
+    {name :'vaibhav',selected:true},
+    {name :'vaibhav',selected:false},
+    {name :'vaibhav',selected:false},
+    {name :'vaibhav',selected:false},
+    {name :'vaibhav',selected:true},
+    {name :'vaibhav',selected:true},
+    {name :'vaibhav',selected:true},
+    {name :'vaibhav',selected:true},
+    {name :'vaibhav',selected:true},
+    {name :'vaibhav',selected:false},
+    {name :'vaibhav',selected:true},
+    {name :'vaibhav',selected:true},
+    {name :'vaibhav',selected:true},
+    {name :'vaibhav',selected:true},
+    {name :'vaibhav',selected:true} 
+  ];
+  public qustionCount : number;
+
   constructor() {
+    this.qustionCount =  this.items.length;
     this.questions = [{
       "id": "1", 
       "heading": "Sample part 1 heading", 
@@ -54,12 +84,13 @@ export class QuizComponent implements OnInit {
           }]
         }
       }]
-    }]
+    }];
     this.selectedPartIndex = 0;
     this.selectedQuestionIndex = 0;
   }
 
   ngOnInit() {
+
   }
 
   loadNextQuestion() {
@@ -84,4 +115,10 @@ export class QuizComponent implements OnInit {
       this.selectedQuestionIndex = this.selectedQuestionIndex - 1;
     }
   }
+  nonSelected() {
+     return !this.items.every(function(item:any) {
+       return item.selected == true;
+    })
+  }
+
 }

@@ -11,12 +11,11 @@ export class QuestionComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    debugger
     this.questionObj['value'] = !!this.questionObj['value'] ? this.questionObj['value'] : ""  
   }
 
   onSelectionChange(answer) {
-    this.questionObj['value'] = answer;
+    this.questionObj['value'] = answer; 
   }
 
 }

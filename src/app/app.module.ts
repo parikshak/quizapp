@@ -8,7 +8,7 @@ import {QuizModule} from './quiz/quiz.module';
 
 
 @NgModule({
-  declarations: [
+  declarations: [ 
     AppComponent
   ],
   imports: [
