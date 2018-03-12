@@ -1,70 +1,60 @@
-### Logo of the project  
-### Name of the project  
+### Poll Form
 
+Poll form is helps us to get opinions from user.
 
-A brief description of your project, what it is used for.
 #### Installing / Getting started
 
-A quick introduction of the minimal setup you need to get a hello world up & running.
-
-commands here
-
-Here you should say what actually happens when you execute the code above.
 #### Developing
-#### Built With
 
-List main libraries, frameworks used including versions (React, Angular etc...)
-#### Prerequisites
+### Built With
 
-What is needed to set up the dev environment. For instance, global dependencies or any other tools. include download links.
-#### Setting up Dev
+1. Angular 5
+2. Semant-UI
 
-Here's a brief intro about what a developer must do in order to start developing the project further:
+### Prerequisites
 
-git clone https://github.com/parikshak/quizapp.git  
-cd quizapp  
-npm install  
+1. NodeJS
+2. NPM
 
-And state what happens step-by-step. If there is any virtual environment, local server or database feeder needed, explain here.
+### Setting up Dev
+
+```git clone https://github.com/parikshak/quizapp.git```<br />
+```cd quizapp```<br />
+```npm install```<br />
+```npm run start```
+
 #### Building
 
-If your project needs some additional steps for the developer to build the project after some code changes, state them here. for example:
-
-./configure
-make  
-make install
-
-Here again you should state what actually happens when the code above gets executed.  
+`npm run build`
 
 #### Deploying / Publishing
 
-give instructions on how to build and release a new version In case there's some step you have to take that publishes this project to a server, this is the right time to state it.
+`work on progress`
 
-packagemanager deploy your-project -s server.com -u username -p password
-
-And again you'd need to tell what the previous code actually does.
 #### Versioning
 
-We can maybe use SemVer for versioning. For the versions available, see the link to tags on this repository.
+`work on progress`
 
 #### Configuration
 
-Here you should write what are all of the configurations a user can enter when using the project.
+`work on progress`
+
 #### Tests
 
-Describe and show how to run the tests with code examples. Explain what these tests test and why.
-
-Give an example
+`work on progress`
 
 #### Style guide
 
-Explain your code style and show how to check it.
+`work on progress`
+
 #### Api Reference
 
-If the api is external, link to api documentation. If not describe your api including authentication methods as well as explaining all the endpoints with their required parameters.
+`work on progress`
+
 #### Database
 
-Explaining what database (and version) has been used. Provide download links. Documents your database design and schemas, relations etc...
+`work on progress`
+
 #### Licensing
 
-State what the license is and how to find the text version of the license.
+`work on progress`
