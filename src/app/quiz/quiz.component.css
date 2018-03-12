@@ -32,6 +32,10 @@
   display: block;
   width: 60%;
   margin-left: 20%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 3px 2px 10px 0px #eaeaea;
 }
 
 .part-title {
