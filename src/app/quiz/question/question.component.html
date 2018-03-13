@@ -1,13 +1,13 @@
 <div class="ui form">
-    <div class="grouped fields">
-        <h3 class="question-title">{{questionObj.title}}</h3>
-        <div class="options-container">
-            <div class="field" *ngFor="let option of questionObj.answers.answer">
-                <div class="ui radio checkbox" (click)="onSelectionChange(option['@value'])">
-                    <input type="radio" name="question-radio" [checked]="questionObj.value === option['@value']" [value]="option['@value']">
-                    <label class="option-label">{{option["@label"]}}</label>
-                </div>
-            </div>
+  <div class="grouped fields">
+    <h3 class="question-title">{{questionObj.title}}</h3>
+    <div class="options-container">
+      <div class="field" *ngFor="let option of questionObj.answers.answer">
+        <div class="ui radio checkbox" (click)="onSelectionChange(option['@value'])">
+          <input type="radio" name="question-radio" [checked]="questionObj.value === option['@value']" [value]="option['@value']">
+          <label class="option-label">{{option["@label"]}}</label>
         </div>
+      </div>
     </div>
+  </div>
 </div>

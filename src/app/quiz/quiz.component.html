@@ -1,53 +1,53 @@
 <app-header></app-header>
 
 <div class="container questions-container">
-    <div>
-        <h4 class="part-title">{{questions[selectedPartIndex].heading}}</h4>
-        <div class="questions-carousel">
-            <div class="left-icon-container" *ngIf="selectedPartIndex > 0 || selectedQuestionIndex > 0" (click)="loadPrevQuestion()">
-                <i class="angle left icon left-icon"></i>
-            </div>
-            <app-question class="question-component-container" [questionObj]="questions[selectedPartIndex].question[selectedQuestionIndex]"></app-question>
-            <div class="right-icon-container" (click)="loadNextQuestion()">
-                <i class="angle right icon right-icon"></i>
-            </div>
-        </div>
+  <div>
+    <h4 class="part-title">{{questions[selectedPartIndex].heading}}</h4>
+    <div class="questions-carousel">
+      <div class="left-icon-container" *ngIf="selectedPartIndex > 0 || selectedQuestionIndex > 0" (click)="loadPrevQuestion()">
+        <i class="angle left icon left-icon"></i>
+      </div>
+      <app-question class="question-component-container" [questionObj]="questions[selectedPartIndex].question[selectedQuestionIndex]"></app-question>
+      <div class="right-icon-container" (click)="loadNextQuestion()">
+        <i class="angle right icon right-icon"></i>
+      </div>
     </div>
+  </div>
 </div>
 
 <div class="questions-container">
-    <div class="ui container">
+  <div class="ui container">
 
-        <div class="ui card custom-card">
-            <div class="content">
-                <h2 class="ui left floated header">
-                    <form class="ui form">
-                        <div class="field">
-                            <div class="ui checkbox">
-                                <input type="checkbox" id="unanswered" name="unanswered" [(ngModel)]="unanswered" value="unanswered">
-                                <label for="unanswered">Show unanswered only</label>
-                            </div>
-                        </div>
-                    </form>
-                </h2>
-                <h5 class="ui right floated header">Total {{qustionCount}} Questions</h5>
+    <div class="ui card custom-card">
+      <div class="content">
+        <h2 class="ui left floated header">
+          <form class="ui form">
+            <div class="field">
+              <div class="ui checkbox">
+                <input type="checkbox" id="unanswered" name="unanswered" [(ngModel)]="unanswered" value="unanswered">
+                <label for="unanswered">Show unanswered only</label>
+              </div>
             </div>
-            <div class="content scrolling ">
-                <div class="ui grid">
-                    <div class="ui seven column row doubling">
-                        <div class="column center aligned" *ngFor="let item of items | questionFilter: unanswered; let i = index" [attr.data-index]="i">
-                            <div class="ui icon green header" [ngClass]="{'green': item.selected, 'red': !item.selected}">
-                                <i class="circular check icon" [ngClass]="{'check': item.selected, 'minus': !item.selected}"></i>
-                                <div class="sub-header">{{i + 1}} </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </form>
+        </h2>
+        <h5 class="ui right floated header">Total {{qustionCount}} Questions</h5>
+      </div>
+      <div class="content scrolling ">
+        <div class="ui grid">
+          <div class="ui seven column row doubling">
+            <div class="column center aligned" *ngFor="let item of items | questionFilter: unanswered; let i = index" [attr.data-index]="i">
+              <div class="ui icon green header" [ngClass]="{'green': item.selected, 'red': !item.selected}">
+                <i class="circular check icon" [ngClass]="{'check': item.selected, 'minus': !item.selected}"></i>
+                <div class="sub-header">{{i + 1}} </div>
+              </div>
             </div>
-            <div class="extra content">
-                <button class="ui button primary" [disabled]="nonSelected()">Submit</button>
-                <button class="ui button red">Quit Exam</button>
-            </div>
+          </div>
         </div>
+      </div>
+      <div class="extra content">
+        <button class="ui button primary" [disabled]="nonSelected()">Submit</button>
+        <button class="ui button red">Quit Exam</button>
+      </div>
     </div>
+  </div>
 </div>
