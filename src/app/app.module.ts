@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import {CoreModule} from './core/core.module';
 import {QuizModule} from './quiz/quiz.module';
 
+import {CommunicationsService} from './services/core/communications.service'
+
 
 @NgModule({
   declarations: [ 
@@ -16,7 +18,7 @@ import {QuizModule} from './quiz/quiz.module';
     CoreModule,
     QuizModule
   ],
-  providers: [],
+  providers: [CommunicationsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

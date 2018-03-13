@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CommunicationsService} from '../../services/core/communications.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
-
+  isToggle : boolean;
+  constructor(private _communication : CommunicationsService) { }
+  
   ngOnInit() {
+    this._communication.currentToggle.subscribe(value => this.isToggle = value);
+  }
+
+  toggleButton(){
+    let value = !this.isToggle;
+    this._communication.changeToggleSource(value);
   }
 
 }
