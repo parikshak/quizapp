@@ -25,6 +25,7 @@
     -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
     box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
     border-radius: 50%;
+    cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -62,11 +63,6 @@
     margin-bottom: 16px;
     display: inline-block;
     vertical-align: middle;
-}
-
-.part-title {
-    padding-left: 20%;
-    font-size: 25px;
 }
 
 .questions-carousel {

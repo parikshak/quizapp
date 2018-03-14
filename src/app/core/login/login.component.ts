@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
     this.socialAuthService.signIn(socialPlatformProvider).then((userData) => {
       debugger;
       console.log(socialPlatform+" sign in data : " , userData);
-      this.router.navigate(['/'])
+      this.router.navigate(['/quiz'])
     });
   }
 

@@ -9,7 +9,7 @@ export class QuestionFilterPipe implements PipeTransform {
   transform(questions: any, input: any) {
     if (input) {
       return questions.filter(function (el: any) {
-        return el.selected == false;
+        return el.value == '' || !el.value;
       });
     }
     return questions;

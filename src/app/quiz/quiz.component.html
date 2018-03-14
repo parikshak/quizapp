@@ -11,33 +11,16 @@
                     <div class="ui card question-component-container">
                         <div class="content">
                             <h3 class="ui header">
-                                1. GK & Current Affairs Quiz: February 19, 2018
+                                {{selectedPartIndex + 1}}. {{questions[selectedPartIndex].heading}}
                             </h3>
                         </div>
                         <div class="content">
-                            <div class="ui form">
-                                <div class="grouped fields">
-                                    <label>1.1 Which city is hosting the World Congress on Information Technology?</label>
-                                    <div class="field">
-                                        <div class="ui radio checkbox">
-                                            <input type="radio" name="example2" checked="checked">
-                                            <label>Jaipur</label>
-                                        </div>
-                                    </div>
-                                    <div class="field">
-                                        <div class="ui radio checkbox">
-                                            <input type="radio" name="example2">
-                                            <label> New Delhi</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <app-question [indexObj]="{partIndex:selectedPartIndex,questionIndex: selectedQuestionIndex }" [questionObj]="questions[selectedPartIndex].question[selectedQuestionIndex]"></app-question>
                         </div>
                         <div class="extra content center aligned">
-                            9/121 Questions
+                            {{currentIndex}}/{{countOfQuestion}} Questions
                         </div>
                     </div>
-                    <!-- <app-question class="question-component-container ui tall stacked segment " [questionObj]="questions[selectedPartIndex].question[selectedQuestionIndex]"></app-question> -->
                     <div class="right-icon-container" (click)="loadNextQuestion()">
                         <i class="angle right icon right-icon"></i>
                     </div>
@@ -58,14 +41,14 @@
                             </div>
                         </form>
                     </h2>
-                    <h5 class="ui right floated header">Total {{qustionCount}} Questions</h5>
+                    <h5 class="ui right floated header">Total {{countOfQuestion}} Questions</h5>
                 </div>
                 <div class="content scrolling ">
                     <div class="ui grid">
                         <div class="ui seven column row doubling">
-                            <div class="column center aligned" *ngFor="let item of items | questionFilter: unanswered; let i = index" [attr.data-index]="i">
-                                <div class="ui icon green header" [ngClass]="{'green': item.selected, 'red': !item.selected}">
-                                    <i class="circular check icon" [ngClass]="{'check': item.selected, 'minus': !item.selected}"></i>
+                            <div class="column center aligned" *ngFor="let question of filteredQuestions | questionFilter : unanswered; let i = index" [attr.data-index]="i">
+                                <div class="ui icon green header" [ngClass]="{'green': question.value, 'red': !question.value}">
+                                    <i class="circular check icon" [ngClass]="{'check': question.value, 'minus': !question.value}"></i>
                                     <div class="sub-header">{{i + 1}} </div>
                                 </div>
                             </div>
@@ -73,7 +56,7 @@
                     </div>
                 </div>
                 <div class="extra content">
-                    <button class="ui button primary" (click)="showSuccessModal();" [disabled]="nonSelected()">Submit</button>
+                    <button class="ui button primary" (click)="showSuccessModal();" [disabled]="!nonSelected">Submit</button>
                     <button class="ui button red">Quit Exam</button>
                 </div>
             </div>
