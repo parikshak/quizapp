@@ -1,4 +1,5 @@
 {
+
     "name": "ng5example",
     "version": "0.0.0",
     "license": "MIT",
@@ -12,6 +13,9 @@
     },
     "private": true,
     "dependencies": {
+        "@angular-redux/form": "^6.7.0",
+        "@angular-redux/router": "^7.0.0",
+        "@angular-redux/store": "^7.1.1",
         "@angular/animations": "^5.2.0",
         "@angular/common": "^5.2.0",
         "@angular/compiler": "^5.2.0",
@@ -24,6 +28,10 @@
         "angular5-social-login": "^1.0.9",
         "core-js": "^2.4.1",
         "jquery": "^3.3.1",
+        "ramda": "^0.25.0",
+        "redux": "^3.7.2",
+        "redux-logger": "^3.0.6",
+        "redux-observable": "^0.18.0",
         "rxjs": "^5.5.6",
         "semantic-ui": "^2.3.0",
         "zone.js": "^0.8.19"
@@ -35,6 +43,7 @@
         "@types/jasmine": "~2.8.3",
         "@types/jasminewd2": "~2.0.2",
         "@types/node": "~6.0.60",
+        "@types/redux-logger": "^3.0.5",
         "codelyzer": "^4.0.1",
         "jasmine-core": "~2.8.0",
         "jasmine-spec-reporter": "~4.2.1",

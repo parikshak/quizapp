@@ -12,7 +12,8 @@ import {QuestionFilterPipe} from '../directives/question-filter.pipe';
 
 
 const routes: Routes = [ 
-  { path: 'quiz', component: QuizComponent}
+  { path: 'quiz', component: QuizComponent },
+  { path: '', component: QuizComponent }
 ];
 
 
