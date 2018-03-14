@@ -1,126 +1,126 @@
 .quiz-container {
-    padding-top: 6em;
-    height: 100%;
-    background-color: #8EC5FC;
-    background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  padding-top: 6em;
+  height: 100%;
+  background-color: #8EC5FC;
+  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
 }
 
 .left-icon-container,
 .right-icon-container {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 50%;
-    z-index: 5;
-    display: inline-block;
-    line-height: 40px;
-    margin-left: 0;
-    margin-right: 0;
-    color: #5e5795;
-    margin-top: -25px !important;
-    background: #fff;
-    font-size: 30px;
-    text-align: center;
-    margin: 0;
-    -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
-    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
-    border-radius: 50%;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: inline-block;
+  line-height: 40px;
+  margin-left: 0;
+  margin-right: 0;
+  color: #5e5795;
+  margin-top: -25px !important;
+  background: #fff;
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
+  border-radius: 50%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .left-icon-container {
-    left: 20px;
-    padding: 0px 1px;
+  left: 20px;
+  padding: 0px 1px;
 }
 
 .right-icon-container {
-    right: 20px;
-    padding: 0px 4px;
+  right: 20px;
+  padding: 0px 4px;
 }
 
 .question-component-container {
-    display: block;
-    width: 60%;
-    margin: 0 auto;
-    background: #fff;
-    -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
-    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
-    border-radius: .28571429rem;
-    border: 0px;
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
+  border-radius: .28571429rem;
+  border: 0px;
 }
 
 .question-component-container .header {
-    color: rgb(90, 83, 168);
+  color: rgb(90, 83, 168);
 }
 
 .question-component-container .grouped.fields>label {
-    font-size: 16px;
-    font-weight: 500;
-    margin-bottom: 16px;
-    display: inline-block;
-    vertical-align: middle;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .part-title {
-    padding-left: 20%;
-    font-size: 25px;
+  padding-left: 20%;
+  font-size: 25px;
 }
 
 .questions-carousel {
-    position: relative;
-    margin-top: 150px;
+  position: relative;
+  margin-top: 150px;
 }
 
 .custom-card {
-    width: 100%;
-    -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
-    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
-    border-radius: .28571429rem;
-    border: 0px;
+  width: 100%;
+  -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
+  border-radius: .28571429rem;
+  border: 0px;
 }
 
 .custom-card .floated.header {
-    margin: 0;
+  margin: 0;
 }
 
 .custom-card .right.header {
-    margin-top: 8px;
+  margin-top: 8px;
 }
 
 .custom-card .green>.circular {
-    -webkit-box-shadow: 0 0 0 0.1em rgb(33, 186, 69) inset;
-    box-shadow: 0 0 0 0.1em rgb(33, 186, 69) inset;
+  -webkit-box-shadow: 0 0 0 0.1em rgb(33, 186, 69) inset;
+  box-shadow: 0 0 0 0.1em rgb(33, 186, 69) inset;
 }
 
 .custom-card .red>.circular {
-    -webkit-box-shadow: 0 0 0 0.1em rgb(219, 40, 40) inset;
-    box-shadow: 0 0 0 0.1em rgb(219, 40, 40) inset;
+  -webkit-box-shadow: 0 0 0 0.1em rgb(219, 40, 40) inset;
+  box-shadow: 0 0 0 0.1em rgb(219, 40, 40) inset;
 }
 
 .custom-card .scrolling.content {
-    max-height: calc(70vh);
-    overflow: hidden;
-    overflow-y: auto;
+  max-height: calc(70vh);
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 .animated {
-    animation-duration: 1s;
-    animation-fill-mode: both
+  animation-duration: 1s;
+  animation-fill-mode: both
 }
 
 @keyframes slideInUp {
-    0% {
-        transform: translate3d(0, 100%, 0);
-        visibility: visible
-    }
-    to {
-        transform: translateZ(0)
-    }
+  0% {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible
+  }
+  to {
+    transform: translateZ(0)
+  }
 }
 
 .slideInUp {
-    animation-name: slideInUp
+  animation-name: slideInUp
 }
