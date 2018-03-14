@@ -1,6 +1,7 @@
 <app-header></app-header>
 <div class="quiz-container">
-    <<<<<<< HEAD <div class="ui container">
+
+    <div class="ui container">
         <div class="question-wrapper" [hidden]="isShown">
             <div>
                 <!-- <h4 class="part-title">{{questions[selectedPartIndex].heading}}</h4> -->
@@ -22,95 +23,47 @@
                         </div>
                     </div>
                     <div class="right-icon-container" (click)="loadNextQuestion()">
-                        <i class="angle right icon right-icon"></i> =======
-                        <div class="ui container">
-                            <div class="question-wrapper" [hidden]="isShown">
-                                <div>
-                                    <!-- <h4 class="part-title">{{questions[selectedPartIndex].heading}}</h4> -->
-                                    <div class="questions-carousel">
-                                        <div class="left-icon-container" *ngIf="selectedPartIndex > 0 || selectedQuestionIndex > 0" (click)="loadPrevQuestion()">
-                                            <i class="angle left icon left-icon"></i>
-                                        </div>
-                                        <div class="ui card question-component-container">
-                                            <div class="content">
-                                                <h3 class="ui header">
-                                                    1. GK & Current Affairs Quiz: February 19, 2018
-                                                </h3>
-                                            </div>
-                                            <div class="content">
-                                                <div class="ui form">
-                                                    <div class="grouped fields">
-                                                        <label>1.1 Which city is hosting the World Congress on Information Technology?</label>
-                                                        <div class="field">
-                                                            <div class="ui radio checkbox">
-                                                                <input type="radio" name="example2" checked="checked">
-                                                                <label>Jaipur</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="field">
-                                                            <div class="ui radio checkbox">
-                                                                <input type="radio" name="example2">
-                                                                <label> New Delhi</label> >>>>>>> e24964b031514bef5b8cbff4d439ded0952db3d8
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="extra content center aligned">
-                                                9/121 Questions
-                                            </div>
-                                        </div>
-                                        <!-- <app-question class="question-component-container ui tall stacked segment " [questionObj]="questions[selectedPartIndex].question[selectedQuestionIndex]"></app-question> -->
-                                        <div class="right-icon-container" (click)="loadNextQuestion()">
-                                            <i class="angle right icon right-icon"></i>
-                                        </div>
-                                    </div>
+                        <i class="angle right icon right-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="review-wrapper animated slideInUp" [hidden]="!isShown">
+            <div class="ui card custom-card">
+                <div class="content">
+                    <h2 class="ui left floated header">
+                        <form class="ui form">
+                            <div class="field">
+                                <div class="ui checkbox">
+                                    <input type="checkbox" id="unanswered" name="unanswered" [(ngModel)]="unanswered" value="unanswered">
+                                    <label for="unanswered">Show unanswered only</label>
                                 </div>
                             </div>
-                            <div class="review-wrapper animated slideInUp" [hidden]="!isShown">
-
-                                <div class="ui card custom-card">
-                                    <div class="content">
-                                        <h2 class="ui left floated header">
-                                            <form class="ui form">
-                                                <div class="field">
-                                                    <div class="ui checkbox">
-                                                        <input type="checkbox" id="unanswered" name="unanswered" [(ngModel)]="unanswered" value="unanswered">
-                                                        <label for="unanswered">Show unanswered only</label>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </h2>
-                                        <h5 class="ui right floated header">Total {{countOfQuestion}} Questions</h5>
-                                    </div>
-                                    <div class="content scrolling ">
-                                        <div class="ui grid">
-                                            <div class="ui seven column row doubling">
-                                                <div class="column center aligned" *ngFor="let question of filteredQuestions | questionFilter : unanswered; let i = index" [attr.data-index]="i">
-                                                    <div class="ui icon green header" [ngClass]="{'green': question.value, 'red': !question.value}">
-                                                        <i class="circular check icon" [ngClass]="{'check': question.value, 'minus': !question.value}"></i>
-                                                        <div class="sub-header">{{i + 1}} </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="extra content">
-                                        <button class="ui button primary" (click)="showSuccessModal();" [disabled]="!nonSelected">Submit</button>
-                                        <button class="ui button red">Quit Exam</button>
-                                    </div>
+                        </form>
+                    </h2>
+                    <h5 class="ui right floated header">Total {{countOfQuestion}} Questions</h5>
+                </div>
+                <div class="content scrolling ">
+                    <div class="ui grid">
+                        <div class="ui seven column row doubling">
+                            <div class="column center aligned" *ngFor="let question of filteredQuestions | questionFilter : unanswered; let i = index" [attr.data-index]="i">
+                                <div class="ui icon green header" [ngClass]="{'green': question.value, 'red': !question.value}">
+                                    <i class="circular check icon" [ngClass]="{'check': question.value, 'minus': !question.value}"></i>
+                                    <div class="sub-header">{{i + 1}} </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="extra content">
-                        <button class="ui button primary" (click)="showSuccessModal();" [disabled]="nonSelected()">Submit</button>
-                        <button class="ui button red">Quit Exam</button>
-                    </div>
+                </div>
+                <div class="extra content">
+                    <button class="ui button primary" (click)="showSuccessModal();" [disabled]="!nonSelected">Submit</button>
+                    <button class="ui button red">Quit Exam</button>
+
                 </div>
 
             </div>
         </div>
+    </div>
 </div>
 
 <div class="ui basic modal">
