@@ -7,15 +7,13 @@ import {CoreModule} from './core/core.module';
 import {QuizModule} from './quiz/quiz.module';
 
 import {CommunicationsService} from './services/core/communications.service'
-
-
 @NgModule({
   declarations: [ 
     AppComponent
   ],
   imports: [
     BrowserModule,
-    CoreModule,
+    CoreModule, 
     QuizModule
   ],
   providers: [CommunicationsService],

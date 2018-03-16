@@ -1,5 +1,4 @@
 {
-
     "name": "ng5example",
     "version": "0.0.0",
     "license": "MIT",
@@ -28,6 +27,7 @@
         "angular5-social-login": "^1.0.9",
         "core-js": "^2.4.1",
         "jquery": "^3.3.1",
+        "ngx-slick": "^0.1.3",
         "ramda": "^0.25.0",
         "redux": "^3.7.2",
         "redux-logger": "^3.0.6",

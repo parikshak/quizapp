@@ -156,7 +156,7 @@ export class QuizComponent implements OnInit {
     this.selectedQuestionIndex = selectedQuestionIndex;
   }
 
-  get filteredQuestions(){
+  get filteredQuestions() {
     var list: any[] = [];
     this.questions.forEach(question => {
       question.question.map(function(n, i) {  
