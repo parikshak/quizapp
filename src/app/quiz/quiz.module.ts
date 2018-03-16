@@ -10,8 +10,8 @@ import { QuestionComponent } from './question/question.component';
 
 import {QuestionFilterPipe} from '../directives/question-filter.pipe';
 
-
-const routes: Routes = [ 
+import { SlickModule } from 'ngx-slick';
+const routes: Routes = [
   { path: 'quiz', component: QuizComponent },
   { path: '', component: QuizComponent }
 ];
@@ -22,7 +22,8 @@ const routes: Routes = [
     CommonModule,
     CoreModule,
     FormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    SlickModule.forRoot()
   ],
   exports:[RouterModule],
   declarations: [ReviewComponent, QuizComponent, QuestionComponent,QuestionFilterPipe]
