@@ -1,53 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild,AfterViewInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {CommunicationsService} from '../services/core/communications.service';
 import {HeaderComponent} from '../core/header/header.component'
 import { debug } from 'util';
 declare var jquery:any;
 declare var $ :any;
+
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.css'],
 })
 export class QuizComponent implements OnInit {
-  
+
   public isShown : boolean;
-  public currentIndex : number;
   public countOfQuestion : number;
   questions: any[];
-  selectedPartIndex: number;
-  selectedQuestionIndex: number;
-  public items = [
-    {name :'vaibhav',selected:true},
-    {name :'vaibhav',selected:true},
-    {name :'vaibhav',selected:true},
-    {name :'vaibhav',selected:false},
-    {name :'vaibhav',selected:true},
-    {name :'vaibhav',selected:true},
-    {name :'vaibhav',selected:false},
-    {name :'vaibhav',selected:true},
-    {name :'vaibhav',selected:true},
-    {name :'vaibhav',selected:true},
-    {name :'vaibhav',selected:false},
-    {name :'vaibhav',selected:false},
-    {name :'vaibhav',selected:false},
-    {name :'vaibhav',selected:true},
-    {name :'vaibhav',selected:true},
-    {name :'vaibhav',selected:true},
-    {name :'vaibhav',selected:true},
-    {name :'vaibhav',selected:true},
-    {name :'vaibhav',selected:false},
-    {name :'vaibhav',selected:true},
-    {name :'vaibhav',selected:true},
-    {name :'vaibhav',selected:true},
-    {name :'vaibhav',selected:true},
-    {name :'vaibhav',selected:true} 
+  slides = [
+    {img: "http://placehold.it/350x150/000000"},
+    {img: "http://placehold.it/350x150/111111"},
+    {img: "http://placehold.it/350x150/333333"},
+    {img: "http://placehold.it/350x150/666666"}
   ];
-  public qustionCount : number;
-
-  constructor(private _communications : CommunicationsService ) {
-    this.qustionCount =  this.items.length;
+  slideConfig = {
+    "slidesToShow": 1,
+     "slidesToScroll": 1,
+     infinite: false,
+     nextArrow: '<div class="right-icon-container" ><i class="angle right icon right-icon"></i></div>',
+        prevArrow: '<div class="left-icon-container"><i class="angle left icon left-icon"></i></div>'
+  };
+  constructor(
+    private _communications : CommunicationsService) {
     this.questions = [{
       "id": "1", 
       "heading": "Sample part 1 heading", 
@@ -101,10 +84,7 @@ export class QuizComponent implements OnInit {
         }
       }]
     }];
-    this.selectedPartIndex = 0;
-    this.selectedQuestionIndex = 0;
     this.countOfQuestion = 0;
-    this.currentIndex = 1;
   }
 
   ngOnInit() {
@@ -112,72 +92,58 @@ export class QuizComponent implements OnInit {
     this.numberOfQuestion();
   }
 
+  afterChange(e) {
+    let currentSlide = e.currentSlide + 1;
+    if(e.slick.slideCount == currentSlide) {
+        $('.checkbox').trigger('click');
+    }
+  }
+
   numberOfQuestion() {
     this.questions.forEach(question => {
       var len = $.map(question.question, function(n, i) { return i; }).length;
       this.countOfQuestion += len;
     });
-    // console.log(this.questionCount);
   }
 
-  loadNextQuestion() {
-    var currentPartQuesCount = this.questions[this.selectedPartIndex].question.length - 1;
-    if(this.selectedQuestionIndex === currentPartQuesCount ) {
-      if (this.selectedPartIndex === (this.questions.length - 1)) {
-        $('.checkbox').trigger('click');
-      } else {
-        this.selectedPartIndex = this.selectedPartIndex + 1;
-        this.selectedQuestionIndex = 0;
-        this.currentIndex += 1;
-      }
-    } else {
-      this.selectedQuestionIndex = this.selectedQuestionIndex + 1;
-      this.currentIndex += 1;
-    }
-    console.log(this.questions);
-  }
-
-  loadPrevQuestion() {
-    if(this.selectedQuestionIndex === 0 ) {
-      this.selectedPartIndex = this.selectedPartIndex - 1;
-      this.selectedQuestionIndex = this.questions[this.selectedPartIndex].question.length - 1;
-    } else {
-      this.selectedQuestionIndex = this.selectedQuestionIndex - 1;
-    }
-    this.currentIndex -= 1;
-  }
-
-  showSuccessModal() {
+  showSuccessModal() { 
     $('.ui.basic.modal').modal('show');
   }
 
-  changeQuestionIndex(selectedPartIndex:number, selectedQuestionIndex:number) {
-    this.selectedPartIndex = selectedPartIndex;
-    this.selectedQuestionIndex = selectedQuestionIndex;
+  questionGoTo(slickModal,selectedIndex) : void {
+    $(slickModal.$instance).slick('slickGoTo', selectedIndex - 1);
+    $('.checkbox').trigger('click');
   }
 
   get filteredQuestions() {
     var list: any[] = [];
+    var index = 1;
     this.questions.forEach(question => {
       question.question.map(function(n, i) {  
-            list.push(n);
+            n.heading = question.heading;
+            n.index = index++;
+            list.push(n); 
        });
     });
     return list;
   }
 
-  get nonSelected(){
-    var keepGoing = true;
-    this.questions.forEach(question => {
-      question.question.forEach(q =>  {  
-        if(keepGoing) {
-          if(!q.value || q.value == ''){
-            keepGoing = false;
-          }
+  get nonSelected() {
+   var disabled = true; 
+   let mainQuestion = this.questions;
+    for (var i = 0;i < mainQuestion.length; i++) {
+        let innerQuestion = mainQuestion[i].question;
+        if(!disabled){
+          break;
+        }        
+        for(var j = 0;j < innerQuestion.length;j++){
+           if(!innerQuestion[j].value){
+             disabled = false;
+             break;
+           }
         }
-       });
-    });
-    return keepGoing;
+    }
+    return disabled;
   }
 
 }

@@ -5,43 +5,6 @@
     background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
 }
 
-.left-icon-container,
-.right-icon-container {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 50%;
-    z-index: 5;
-    display: inline-block;
-    line-height: 40px;
-    margin-left: 0;
-    margin-right: 0;
-    color: #5e5795;
-    margin-top: -25px !important;
-    background: #fff;
-    font-size: 30px;
-    text-align: center;
-    margin: 0;
-    -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
-    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
-    border-radius: 50%;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.left-icon-container {
-    left: 20px;
-    padding: 0px 1px;
-}
-
-.right-icon-container {
-    right: 20px;
-    padding: 0px 4px;
-}
-
 .question-component-container {
     display: block;
     width: 60%;
@@ -73,14 +36,6 @@
 .questions-carousel {
     position: relative;
     margin-top: 150px;
-}
-
-.custom-card {
-    width: 100%;
-    -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
-    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15);
-    border-radius: .28571429rem;
-    border: 0px;
 }
 
 .custom-card .floated.header {
