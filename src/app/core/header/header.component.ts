@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Routes, Router } from '@angular/router';
 import {CommunicationsService} from '../../services/core/communications.service';
+declare var jquery:any;
+declare var $ :any;
 
 @Component({
   selector: 'app-header',
@@ -8,10 +11,17 @@ import {CommunicationsService} from '../../services/core/communications.service'
 })
 export class HeaderComponent implements OnInit {
   isToggle : boolean;
-  constructor(private _communication : CommunicationsService) { }
+  constructor(
+    private _communication : CommunicationsService,
+    private router: Router
+  ) { }
   
   ngOnInit() {
     this._communication.currentToggle.subscribe(value => this.isToggle = value);
+    $('#accountTab.dropdown')
+        .dropdown({
+            on: 'hover'
+        })
   }
 
   toggleButton(){

@@ -8,6 +8,14 @@
     border: 0px;
 }
 
+.custom-shadow {
+    -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15) !important;
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, .15) !important;
+    border-radius: .28571429rem !important;
+    border: 0px !important;
+    outline: none !important;
+}
+
 .left-icon-container,
 .right-icon-container {
     width: 40px;

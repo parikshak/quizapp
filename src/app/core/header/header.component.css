@@ -1,3 +1,7 @@
+    .menu>.item.hidden {
+        display: none !important;
+    }
+    
     .header-container {
         border: 0px;
     }
